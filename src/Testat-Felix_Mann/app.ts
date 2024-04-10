@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 import session from 'express-session';
-import {indexRoutes} from './routes/index-routes';
+import {appRoutes} from './routes/app-routes';
 import {helpers} from './utils/handlebar-util'
 
 
@@ -43,4 +43,4 @@ app.use(sessionUserSettings)
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use("/", indexRoutes);
+app.use("/", appRoutes);
