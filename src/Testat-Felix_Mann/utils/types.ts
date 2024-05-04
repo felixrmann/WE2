@@ -1,23 +1,39 @@
-
-export interface Note extends NoteDbo {
-    id: string;
-}
-
-export interface NoteDbo {
+export interface Note {
+    _id: string;
     title: string;
-    note: string;
-    date: Date;
+    content: string;
+    creationDate: Date;
+    dueDate: Date;
     importance: Importance;
     status: Status;
 }
 
+export interface NoteDbo {
+    title: string;
+    content: string;
+    creationDate: Date;
+    dueDate: Date;
+    importance: Importance;
+    status: Status;
+}
+
+export interface NoteDto {
+    _id: string;
+    title: string;
+    content: string;
+    creationDate: Date;
+    dueDate: Date;
+    importance: string;
+    status: string;
+}
+
 export enum Importance {
-    Low = 0,
-    Medium = 1,
-    High = 2
+    Low = '0',
+    Medium = '1',
+    High = '2'
 }
 
 export enum Status {
-    Planned = 0,
-    Done = 1
+    Open = '0',
+    Done = '1'
 }

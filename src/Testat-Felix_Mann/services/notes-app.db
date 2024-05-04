@@ -1,1 +1,3 @@
-{"hello":"world","_id":"2tsBzVwZRaFWK77m"}
+{"title":"Leben","content":"asdasda","creationDate":{"$$date":1714845044440},"dueDate":"2024-05-31","importance":"0","status":"1","_id":"DysxfqpDyXPPCenC"}
+{"title":"Hug joji","content":"huge big huggies","creationDate":{"$$date":1714845068226},"dueDate":"2024-05-04","importance":"2","status":"1","_id":"pkIRccMl33IS1LZB"}
+{"title":"Kiss Joji","content":"sehr viel kissies","creationDate":{"$$date":1714845010032},"dueDate":"2024-05-04","importance":"2","status":"1","_id":"w5he9mdukpl9JXFJ"}

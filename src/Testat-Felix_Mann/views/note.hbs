@@ -1,0 +1,33 @@
+<section class="notes-content">
+    {{#if (isNew newNote)}}
+        <h2 class="center-things">New Note</h2>
+    {{/if}}
+    {{#if (isNotNew newNote)}}
+        <h2 class="center-things">Edit Note</h2>
+    {{/if}}
+    <form action="/note/{{_id}}" method="post">
+        <label for="title">Title</label>
+        <input name="title" id="title" type="text" required value="{{note.title}}">
+        <label for="content">Content</label>
+        <textarea name="content" id="content" rows="5" required>{{note.content}}</textarea>
+        <label for="date">Due Date</label>
+        <input name="date" id="date" type="date" required value="{{note.dueDate}}">
+        <label for="importance">Importance</label>
+        <select name="importance" id="importance">
+            <option value="0" {{#if (setSelected '0' note.importance)}}selected="selected"{{/if}}>Low</option>
+            <option value="1" {{#if (setSelected '1' note.importance)}}selected="selected"{{/if}}>Medium</option>
+            <option value="2" {{#if (setSelected '2' note.importance)}}selected="selected"{{/if}}>High</option>
+        </select>
+        <div class="note-button-container">
+            {{#if (isNew newNote)}}
+                <button class="button-style note-button-style" type="submit">Create</button>
+            {{/if}}
+            {{#if (isNotNew newNote)}}
+                <button class="button-style note-button-style" type="submit">Update</button>
+            {{/if}}
+            <a class="button-style note-button-style" href="/">
+                Back
+            </a>
+        </div>
+    </form>
+</section>

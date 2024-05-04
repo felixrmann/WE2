@@ -1,7 +1,74 @@
-<h1>APP</h1>
-<form action="/notes" method="post">
-    <label for="name">Name:</label>
-    <input id="name" name="name" type="text">
+<body>
+<header class="header-style">
+    <div class="header-container">
+        <h1>Notes4Jokes</h1>
+    </div>
+    <span class="header-button-container">
+        <a class="button-style header-button" href="/toggleStyle">
+            Toggle Style
+        </a>
+        <a class="button-style header-button" href="/note">
+            Add Note
+        </a>
+    </span>
+</header>
+<section class="center-things">
+    <form action="/" method="get">
+        <label for="orderBy">Order by</label>
+        <select name="orderBy" id="orderBy">
+            <option value="title">Title</option>
+            <option value="dueDate">Due Date</option>
+            <option value="creationDate">Creation Date</option>
+            <option value="importance">Importance</option>
+        </select>
+        <label for="orderDirection">, direction</label>
+        <select name="orderDirection" id="orderDirection">
+            <option value="1">Ascending</option>
+            <option value="-1">Descending</option>
+        </select>
+        <label for="excludeCompleted"> and exclude completed</label>
+        <select name="excludeCompleted" id="excludeCompleted">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+</section>
+<section>
+    <ol class="notes">
+        {{#each notes}}
+            <li class="note">
+                <span class="note-title">
+                    {{this.title}}
+                </span>
+                <span class="note-align-right note-due-date">
+                    {{dateFormat this.dueDate}}
+                </span>
+                <span class="note-align-right note-importance">
+                    {{this.importance}}
+                </span>
+                <span class="note-align-right note-status">
+                    <label>
+                        <input type="checkbox" disabled {{#if (isDone this.status)}}checked{{/if}}>
+                        {{this.status}}
+                    </label>
+                </span>
+                <span class="note-content">
+                    {{this.content}}
+                </span>
+                <span class="note-align-right note-actions">
+                    {{#if (isNotDone this.status)}}
+                        <a class="button-style" href="/{{this._id}}/done">
+                        Done
+                    </a>
+                    <a class="button-style" href="/note/{{this._id}}/edit">
+                        Edit
+                    </a>
+                    {{/if}}
+                </span>
+            </li>
+        {{/each}}
+    </ol>
+</section>
+</body>
 
-    <button type="submit">Test</button>
-</form>

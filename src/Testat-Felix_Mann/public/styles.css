@@ -1,0 +1,143 @@
+/* Global styles */
+html {
+    font-size: 1.1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    background-color: #598de7;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.button-style {
+    background-color: #598de7;
+    text-decoration: none;
+    text-align: center;
+    width: 2.6em;
+    height: 1.5em;
+    padding: .2em .7em;
+    color: black;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    margin-left: .3em;
+}
+
+.center-things {
+    text-align: center;
+}
+
+.to-far-left {
+    float: left;
+}
+
+.to-far-right {
+    float: right;
+}
+
+/* notes view styles */
+
+.notes-content {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: .5em 0;
+}
+
+.notes-content label {
+    padding: 1em 1em;
+}
+
+.notes-content input, .notes-content select, .notes-content textarea {
+    display: block;
+    width: 100%;
+    margin: .5em;
+    padding: .5em;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.note-button-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note-button-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    width: 6em;
+    height: 2em;
+}
+
+/* main view styles */
+
+.header-style {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container {
+    justify-content: flex-start;
+}
+
+.header-button-container {
+    justify-content: flex-end;
+}
+
+.header-button {
+    font-size: 14px;
+    width: 6em;
+    height: 1.3em;
+}
+
+.notes {
+    padding-inline-start: 0;
+    margin: .5em;
+}
+
+.note {
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    padding: .5em;
+    border: 1px solid #598de7;
+    justify-content: space-between;
+}
+
+.note-align-right {
+    display: flex;
+    justify-content: right;
+}
+
+.note-title {
+    width: 40%;
+    text-decoration: underline;
+}
+
+.note-due-date {
+    width: 20%;
+    padding-bottom: 1rem;
+}
+
+.note-importance {
+    width: 20%;
+}
+
+.note-status {
+    width: 20%;
+}
+
+.note-content {
+    width: 70%;
+}
+
+.note-actions {
+    width: 30%;
+}
