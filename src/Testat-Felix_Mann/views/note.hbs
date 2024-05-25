@@ -11,7 +11,7 @@
         <label for="content">Content</label>
         <textarea name="content" id="content" rows="5" required>{{note.content}}</textarea>
         <label for="date">Due Date</label>
-        <input name="date" id="date" type="date" required value="{{note.dueDate}}">
+        <input name="date" id="date" type="date" value="{{note.dueDate}}">
         <label for="importance">Importance</label>
         <select name="importance" id="importance">
             <option value="0" {{#if (setSelected '0' note.importance)}}selected="selected"{{/if}}>Low</option>

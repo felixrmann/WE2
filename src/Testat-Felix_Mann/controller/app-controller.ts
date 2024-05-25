@@ -1,11 +1,11 @@
-import {NextFunction, Request, Response} from "express";
+import {Request, Response} from "express";
 import {NoteDbo, Status} from "../utils/types";
 import {dataService} from "../services/data-service";
 import {transformNote} from "./controller-helper";
 
 export class AppController {
 
-    toggleStyle(req: Request, res: Response) {
+    toggleStyle(req: Request, res: Response): void {
         if (req.session.userSettings?.theme) {
             req.session.userSettings.theme =
                 req.session.userSettings?.theme === "dark" ? "light" : "dark";
@@ -19,7 +19,7 @@ export class AppController {
                 notes: transformNote(entries)
             });
         });
-    };
+    }
 
     done(req: Request, res: Response): void {
         dataService.getNote(req.params.id).then(note => {

@@ -1,4 +1,5 @@
 export const helpers = {
+    // eslint-disable-next-line
     if_eq: function (a: any, b: any, opts: any): any {
         if (a === b)
             return opts.fn(this);
@@ -8,7 +9,7 @@ export const helpers = {
 
     dateFormat: function (date: string): string {
         if (!date) return 'Invalid Date';
-        let someDate = new Date(date);
+        const someDate = new Date(date);
         const options: Intl.DateTimeFormatOptions = {
             year: 'numeric',
             month: 'long',

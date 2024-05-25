@@ -2,7 +2,7 @@ import {NoteDto} from "../utils/types";
 
 export function transformNote(entries: any[]): NoteDto[] {
     const result: NoteDto[] = [];
-    for (let entry of entries) {
+    for (const entry of entries) {
         result.push({
             _id: entry._id,
             title: entry.title,
